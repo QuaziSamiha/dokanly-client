@@ -1,0 +1,16 @@
+node_modules
+.next
+.git
+.gitignore
+.vscode
+docs
+claude-docs
+coverage
+.env
+.env.*
+*.tsbuildinfo
+Dockerfile
+Dockerfile.dev
+.dockerignore
+npm-debug.log*
+yarn-error.log*

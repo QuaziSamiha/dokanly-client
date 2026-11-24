@@ -1,0 +1,554 @@
+/* //? This pulls in all of Tailwind’s base styles, utilities, and resets. */
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* //? base colors (light mode) */
+/* //? These are CSS variables that define your main colors (light theme by default). */
+/* //? can be reused anywhere */
+/* //? You can reuse them later, and even override them for dark mode. */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  /* ============ COLOR PALATE FROM FIGMA =========== */
+  --color-greenPrimary-50: #dcfe84;
+  --color-greenPrimary-100: #cbf14b;
+  --color-greenPrimary-200: #b1d441;
+  --color-greenPrimary-300: #96b435;
+  --color-greenPrimary-400: #7f982c;
+  --color-greenPrimary-500: #677c22;
+  --color-greenPrimary-600: #516219;
+  --color-greenPrimary-700: #3c4a10;
+  --color-greenPrimary-800: #2a3409;
+  --color-greenPrimary-900: #171e03;
+  --color-greenPrimary-950: #ebffda;
+  --color-neutralPrimary-50: #f9fafb;
+  --color-neutralPrimary-100: #f3f4f6;
+  --color-neutralPrimary-200: #f3f4f6;
+  --color-neutralPrimary-300: #d1d5db;
+  --color-neutralPrimary-400: #9ca3af;
+  --color-neutralPrimary-500: #6b7280;
+  --color-neutralPrimary-600: #4b5563;
+  --color-neutralPrimary-700: #374151;
+  --color-neutralPrimary-800: #1f2937;
+  --color-neutralPrimary-900: #111827;
+  --color-success-50: #f0fdf4;
+  --color-success-100: #dcfce7;
+  --color-success-200: #bbf7d0;
+  --color-success-300: #86efac;
+  --color-success-400: #4ade80;
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+  --color-success-700: #15803d;
+  --color-success-800: #166534;
+  --color-success-900: #14532d;
+  --color-backgroundPrimary: #fcfcfc;
+  --color-backgroundSecondary: #f3f3f3;
+  --color-warningPrimary-50: #fffbeb;
+  --color-warningPrimary-100: #fef3c7;
+  --color-warningPrimary-200: #fde68a;
+  --color-warningPrimary-300: #fde68a;
+  --color-warningPrimary-400: #fbbf24;
+  --color-warningPrimary-500: #f59e0b;
+  --color-warningPrimary-600: #d97706;
+  --color-warningPrimary-700: #b45309;
+  --color-warningPrimary-800: #92400e;
+  --color-warningPrimary-900: #78350f;
+  --color-blackPrimary: #252525;
+  --color-destructive-50: #fef2f2;
+  --color-destructive-100: #fee2e2;
+  --color-destructive-200: #fecaca;
+  --color-destructive-300: #fca5a5;
+  --color-destructive-400: #f87171;
+  --color-destructive-500: #ef4444;
+  --color-destructive-600: #dc2626;
+  --color-destructive-700: #b91c1c;
+  --color-destructive-800: #991b1b;
+  --color-destructive-900: #7f1d1d;
+  --color-textTeal: #4a8f7d;
+  --color-textBlack: #525252;
+  --color-backgroundPeach: #f3efef;
+  --color-blueSecondary-50: #f0f3fe;
+  --color-blueSecondary-100: #dee5fd;
+  --color-blueSecondary-200: #bccbfc;
+  --color-blueSecondary-300: #97b2fa;
+  --color-blueSecondary-400: #739bf8;
+  --color-blueSecondary-500: #3b82f6;
+  --color-blueSecondary-600: #2168cd;
+  --color-blueSecondary-700: #164b99;
+  --color-blueSecondary-800: #0c336b;
+  --color-blueSecondary-900: #041c41;
+  --color-orangeSecondary-100: #ffe5d0;
+  --color-orangeSecondary-500: #fd7e14;
+  --color-yellowSecondary-100: #fff3cd;
+  --color-yellowSecondary-100: #fff3cd;
+  --color-yellowSecondary-800: #856404;
+  --color-purpleSecondary-100: #e8daf7;
+  --color-purpleSecondary-500: #6f42c1;
+  --color-careerBg: #f5f6f1;
+  --color-addToCart: #f79e0b;
+  /* --color-g: #F3EFEF; */
+
+  --shadow-neutral02: 0px 1px 4px 0px #19213d0f;
+  --shadow-inputField: 0px 1px 2px 0px #1018280d;
+  --shadow-dashboardCard: 0px 4px 4px 0px #677c2233;
+  --shadow-promotionApplied: 0px 4px 4px 0px #bababa33;
+  --shadow-newsCard: 4px 4px 8px 0px #0000000f;
+
+  /* --font-sans: var(--font-geist-sans); */
+  /* --font-mono: var(--font-geist-mono); */
+  /* --font-sans: var(--font-plus-jakarta), sans-serif; */
+  /* --font-heading: var(--font-plus-jakarta), sans-serif; */
+
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* //? This checks if the system is in dark mode. So your site automatically switches light ↔ dark based on system settings.*/
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Remove default border and outline from react-phone-number-input input */
+.PhoneInputInput {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.phone-field {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.phone-field .PhoneInputCountry {
+  margin-right: 0;
+  padding-right: 0.625rem;
+  border-right: 1px solid var(--color-neutralPrimary-300);
+  align-self: stretch;
+}
+
+.phone-field .PhoneInputInput {
+  font-size: 0.875rem;
+  color: var(--color-neutralPrimary-800);
+}
+
+.phone-field .PhoneInputInput::placeholder {
+  color: var(--color-neutralPrimary-400);
+}
+
+/* ===== Rich text editor (TextEditor) — matches form field styling ===== */
+.quill-container {
+  border: 1px solid var(--color-neutralPrimary-300);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: var(--shadow-inputField);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quill-container:hover {
+  border-color: var(--color-neutralPrimary-400);
+}
+
+.quill-container:focus-within {
+  border-color: var(--color-greenPrimary-500);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-greenPrimary-500) 15%, transparent);
+}
+
+.quill-container--error,
+.quill-container--error:hover {
+  border-color: var(--color-destructive-400);
+}
+
+.quill-container--error:focus-within {
+  border-color: var(--color-destructive-500);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-destructive-500) 15%, transparent);
+}
+
+.quill-container .ql-toolbar.ql-snow {
+  border: none;
+  border-bottom: 1px solid var(--color-neutralPrimary-300);
+  background-color: var(--color-neutralPrimary-50);
+  padding: 0.5rem 0.625rem;
+}
+
+.quill-container .ql-container.ql-snow {
+  border: none;
+  min-height: 150px;
+  background-color: #ffffff;
+  font-family: inherit;
+  font-size: 0.875rem;
+}
+
+.quill-container .ql-editor {
+  min-height: 150px;
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 0.75rem 0.875rem;
+  color: var(--color-neutralPrimary-800);
+  line-height: 1.6;
+  white-space: normal !important; /* Forces text to wrap */
+  word-break: break-word;        /* Breaks long strings/URLs */
+  overflow-x: hidden;            /* Disables horizontal scroll */
+}
+
+/* Editor scrollbar: a slimmer take on scrollbar-brand (the modal's), so a long
+   description scrolls with the same olive thumb instead of the grey default.
+   The track is inset top and bottom to clear the field's rounded corners. */
+.quill-container .ql-editor {
+  scrollbar-gutter: stable;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .quill-container .ql-editor {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-greenPrimary-400) transparent;
+  }
+}
+
+.quill-container .ql-editor::-webkit-scrollbar {
+  width: 8px;
+}
+
+.quill-container .ql-editor::-webkit-scrollbar-track {
+  background: var(--color-greenPrimary-950);
+  border-radius: 9999px;
+  margin: 8px 0;
+}
+
+.quill-container .ql-editor::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--color-greenPrimary-300),
+    var(--color-greenPrimary-600)
+  );
+  border-radius: 9999px;
+  border: 2px solid var(--color-greenPrimary-950);
+}
+
+.quill-container .ql-editor::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    var(--color-greenPrimary-500),
+    var(--color-greenPrimary-700)
+  );
+}
+
+/* No arrow buttons at the ends of the track. */
+.quill-container .ql-editor::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* Compact editor: short text such as a product's card description */
+.quill-container--compact .ql-container.ql-snow,
+.quill-container--compact .ql-editor {
+  min-height: 80px;
+}
+
+/* Placeholder styling */
+.quill-container .ql-editor.ql-blank::before {
+  color: var(--color-neutralPrimary-400);
+  font-style: normal;
+  left: 0.875rem;
+  right: 0.875rem;
+}
+
+/* Toolbar buttons: brand color on hover / active */
+.quill-container .ql-snow.ql-toolbar button:hover .ql-stroke,
+.quill-container .ql-snow.ql-toolbar button.ql-active .ql-stroke,
+.quill-container .ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke,
+.quill-container .ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke {
+  stroke: var(--color-greenPrimary-500);
+}
+
+.quill-container .ql-snow.ql-toolbar button:hover .ql-fill,
+.quill-container .ql-snow.ql-toolbar button.ql-active .ql-fill {
+  fill: var(--color-greenPrimary-500);
+}
+
+.quill-container .ql-snow.ql-toolbar button:hover,
+.quill-container .ql-snow.ql-toolbar button.ql-active,
+.quill-container .ql-snow.ql-toolbar .ql-picker-label:hover,
+.quill-container .ql-snow.ql-toolbar .ql-picker-label.ql-active,
+.quill-container .ql-snow.ql-toolbar .ql-picker-item:hover,
+.quill-container .ql-snow.ql-toolbar .ql-picker-item.ql-selected {
+  color: var(--color-greenPrimary-500);
+}
+
+.quill-container .ql-snow .ql-picker-options {
+  border-radius: 0.5rem;
+  border-color: var(--color-neutralPrimary-200) !important;
+  box-shadow: 0 8px 24px rgba(16, 24, 40, 0.08);
+}
+
+.quill-container .ql-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+/* This ensures lists and spacing look good when rendering HTML strings */
+.rich-text-container ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.rich-text-container ol {
+  list-style-type: decimal;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.rich-text-container p {
+  margin-bottom: 0.75rem;
+}
+
+/* Add this to your globals.css */
+.rich-text-content {
+  white-space: normal !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+/* Fix for lists (ul/ol) to prevent them from sliding under the sidebar */
+.rich-text-content ul, 
+.rich-text-content ol {
+  list-style-position: inside; /* Keeps bullets within the container */
+  margin-left: 0;
+  padding-left: 1rem;
+}
+
+.rich-text-container .ql-size-small {
+  /* font-size: 14px; */
+  font-size: 0.875em;
+}
+
+.rich-text-container .ql-size-large {
+  font-size: 1.5em;
+}
+
+.rich-text-container .ql-size-huge {
+  font-size: 2.5em;
+}
+
+/* If you want to support text alignment as well */
+.rich-text-container .ql-align-center {
+  text-align: center;
+}
+
+.rich-text-container .ql-align-right {
+  text-align: right;
+}
+ 
+.rich-text-container .ql-align-justify {
+  text-align: justify;
+}
+/* Branded scrollbar: slim olive thumb on a soft lime track. */
+@utility scrollbar-brand {
+  /* Firefox only: Chrome ignores ::-webkit-scrollbar once these are set. */
+  @supports not selector(::-webkit-scrollbar) {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-greenPrimary-400) var(--color-greenPrimary-950);
+  }
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background: var(--color-greenPrimary-950);
+    border-radius: 9999px;
+    margin: 12px 0;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      180deg,
+      var(--color-greenPrimary-300),
+      var(--color-greenPrimary-600)
+    );
+    border-radius: 9999px;
+    border: 2px solid var(--color-greenPrimary-950);
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+      180deg,
+      var(--color-greenPrimary-500),
+      var(--color-greenPrimary-700)
+    );
+  }
+}
+
+/* scrollbar-brand for a field such as a textarea: slimmer, matching the
+   description editor's, with the track inset to clear the rounded corners. */
+@utility scrollbar-brand-field {
+  @supports not selector(::-webkit-scrollbar) {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-greenPrimary-400) transparent;
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background: var(--color-greenPrimary-950);
+    border-radius: 9999px;
+    margin: 8px 0;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      180deg,
+      var(--color-greenPrimary-300),
+      var(--color-greenPrimary-600)
+    );
+    border-radius: 9999px;
+    border: 2px solid var(--color-greenPrimary-950);
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+      180deg,
+      var(--color-greenPrimary-500),
+      var(--color-greenPrimary-700)
+    );
+  }
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+}
+
+/* * Sonner toast colours per operation. A success toast reads its colours from
+   --success-*, so redefining them on the toast itself recolours it while keeping
+   the tick icon. Create stays Sonner's green; errors stay red. */
+.toast-update {
+  --success-bg: hsl(208, 100%, 97%);
+  --success-border: hsl(221, 91%, 90%);
+  --success-text: hsl(210, 92%, 42%);
+}
+
+.toast-delete {
+  --success-bg: hsl(33, 100%, 96%);
+  --success-border: hsl(30, 96%, 85%);
+  --success-text: hsl(20, 90%, 40%);
+}
+
+/* * Info ("No changes detected!") is neutral so it doesn't read as an update. */
+.toast-info {
+  --info-bg: hsl(210, 20%, 98%);
+  --info-border: hsl(214, 20%, 88%);
+  --info-text: hsl(215, 19%, 35%);
+}
